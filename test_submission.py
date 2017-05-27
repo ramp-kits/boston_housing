@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 from __future__ import print_function
-from problem import get_train_data, get_cv, workflow, prediction, score_types
-print("Reading file ...")
+from problem import problem_title, get_train_data, get_cv, workflow,\
+    prediction, score_types
+print('Testing {}'.format(problem_title))
+print('Reading file ...')
 X, y = get_train_data()
-print("Training model ...")
+print('Training model ...')
 cv = get_cv(y)
 module_path = 'submissions.starting_kit'
 for train_is, test_is in cv:
