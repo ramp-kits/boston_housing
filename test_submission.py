@@ -1,17 +1,17 @@
-#!/usr/bin/env
+#!/usr/bin/env python
 from __future__ import print_function
-import problem
+from problem import get_train_data, get_cv, workflow, prediction, score_types
 print("Reading file ...")
-X, y = problem.get_train_data()
+X, y = get_train_data()
 print("Training model ...")
-cv = problem.get_cv(y)
+cv = get_cv(y)
 module_path = 'submissions.starting_kit'
 for train_is, test_is in cv:
-    trained_workflow = problem.workflow.train_submission(
+    trained_workflow = workflow.train_submission(
         module_path, X, y, train_is=train_is)
-    y_pred = problem.workflow.test_submission(trained_workflow, X)
-    predictions = problem.prediction.Predictions(y_pred=y_pred[test_is])
-    ground_truth = problem.prediction.Predictions(y_true=y[test_is])
-    for score_type in problem.score_types:
+    y_pred = workflow.test_submission(trained_workflow, X)
+    predictions = prediction.Predictions(y_pred=y_pred[test_is])
+    ground_truth = prediction.Predictions(y_true=y[test_is])
+    for score_type in score_types:
         score = score_type.score_function(ground_truth, predictions)
         print('{} = {}'.format(score_type.name, score))
