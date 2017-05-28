@@ -4,7 +4,7 @@ import rampwf as rw
 from sklearn.model_selection import ShuffleSplit
 
 problem_title = 'Boston housing price regression'
-prediction = rw.predictions.regression
+prediction_type = rw.prediction_types.regression
 workflow = rw.workflows.Regressor()
 prediction_labels = None
 
