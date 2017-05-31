@@ -23,5 +23,5 @@ def get_train_data(path='.'):
 
 
 def get_cv(y_train_array):
-    cv = ShuffleSplit(n_splits=8, test_size=0.2, random_state=57)
+    cv = ShuffleSplit(n_splits=2, test_size=0.2, random_state=57)
     return cv.split(y_train_array)
