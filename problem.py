@@ -14,7 +14,7 @@ score_types = [
 ]
 
 
-def get_train_data(path='.'):
+def get_data(path='.'):
     data = pd.read_csv(os.path.join(path, 'public_data', 'public_train.csv'))
     target_column_name = 'medv'
     y_array = data[target_column_name].values
