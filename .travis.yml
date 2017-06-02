@@ -12,7 +12,6 @@ install:
     - pip install -q flake8
     - git clone https://github.com/paris-saclay-cds/ramp-workflow.git
     - cd ramp-workflow
-    - sudo -s
     - python setup.py install
     - cd ..
 script:
