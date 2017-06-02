@@ -12,7 +12,8 @@ install:
     - pip install -q flake8
     - git clone https://github.com/paris-saclay-cds/ramp-workflow.git
     - cd ramp-workflow
-    - python setup.py develop
+    - sudo python setup.py install
+    - cd ..
 script:
     - flake8 *.py submissions/*/*.py
     - test_submission
