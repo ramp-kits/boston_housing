@@ -25,4 +25,3 @@ def get_data(path='.'):
 def get_cv(X, y):
     cv = ShuffleSplit(n_splits=8, test_size=0.2, random_state=57)
     return cv.split(X)
- 
