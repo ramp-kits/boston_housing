@@ -18,10 +18,12 @@ install:
     - cd ramp-workflow
     - python setup.py install
     - cd ..
+    - unzip private_data.zip
 script:
     - flake8 *.py submissions/*/*.py
     - jupyter nbconvert --execute boston_housing_starting_kit.ipynb --ExecutePreprocessor.kernel_name=$IPYTHON_KERNEL
     - coverage run ramp-workflow/rampwf/test_submission.py .
+    - coverage run ramp-workflow/rampwf/test_backend.py .
 after_success:
     - codecov
 notifications:
