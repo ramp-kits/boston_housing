@@ -13,10 +13,11 @@ score_types = [
     rw.score_types.RelativeRMSE(name='rel_rmse'),
 ]
 
+target_column_name = 'medv'
+
 
 def get_data(path='.'):
     data = pd.read_csv(os.path.join(path, 'public_data', 'public_train.csv'))
-    target_column_name = 'medv'
     y_array = data[target_column_name].values
     X_array = data.drop([target_column_name], axis=1).values
     return X_array, y_array
