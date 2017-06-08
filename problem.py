@@ -8,6 +8,7 @@ problem_title = 'Boston housing price regression'
 prediction_type = rw.prediction_types.regression
 workflow = rw.workflows.Regressor()
 prediction_labels = None
+_target_column_name = 'medv'
 
 score_types = [
     rw.score_types.RMSE(),
@@ -18,8 +19,6 @@ score_types = [
 def get_cv(X, y):
     cv = ShuffleSplit(n_splits=8, test_size=0.2, random_state=57)
     return cv.split(X)
-
-_target_column_name = 'medv'
 
 
 def _read_data(path, f_name):
