@@ -9,6 +9,7 @@ prediction_type = rw.prediction_types.regression
 workflow = rw.workflows.Regressor()
 prediction_labels = None
 _target_column_name = 'medv'
+is_backend = False
 
 score_types = [
     rw.score_types.RMSE(),
@@ -30,7 +31,6 @@ def _read_data(path, f_name):
 
 def get_train_data(path='.'):
     f_name = 'public_train.csv'
-    # is_backend is defined in rampwf.test_submission
     if is_backend:  # noqa
         f_name = 'train.csv'
     return _read_data(path, f_name)
@@ -38,7 +38,6 @@ def get_train_data(path='.'):
 
 def get_test_data(path='.'):
     f_name = 'public_test.csv'
-    # is_backend is defined in rampwf.test_submission
     if is_backend:  # noqa
         f_name = 'test.csv'
     return _read_data(path, f_name)
