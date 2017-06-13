@@ -31,13 +31,13 @@ def _read_data(path, f_name):
 
 def get_train_data(path='.'):
     f_name = 'public_train.csv'
-    if is_backend:  # noqa
+    if is_backend:
         f_name = 'train.csv'
     return _read_data(path, f_name)
 
 
 def get_test_data(path='.'):
     f_name = 'public_test.csv'
-    if is_backend:  # noqa
+    if is_backend:
         f_name = 'test.csv'
     return _read_data(path, f_name)
