@@ -1,8 +1,8 @@
 """Script called on the backend to prepare data files.
 
-Typically, it creates data/public.csv which will be committed into the
-repo and used by the starting kit, and data/train.csv and data/test.csv
-which are kept locally.
+Typically, it creates data/public_train.csv and data/public_test.csv
+which will be committed into the repo and used by the starting kit,
+and data/train.csv and data/test.csv which are kept locally.
 """
 
 import os
@@ -18,7 +18,7 @@ df_test.to_csv(os.path.join('data', 'test.csv'), index=False)
 
 # It is a good pracice to make the public data independent of both
 # the training and test data on the backend, but it is also fine
-# if the public data is the same as the training data (e.g. in case
+# if the public data is the same as the training data (e.g., in case
 # we don't have much data to spare), since "cheaters"
 # can be caught by looking at their code and by them overfitting the
 # public leaderboard.
