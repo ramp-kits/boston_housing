@@ -17,4 +17,4 @@ dist/
 
 .nfs*
 
-/private_data/*
+*starting_kit.html
