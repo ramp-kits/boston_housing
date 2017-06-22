@@ -7,13 +7,13 @@ Authors: Alexandre Gramfort & Balazs Kegl
 Install ramp-workflows (rampwf), then execute
 
 ```
-test_submission
+ramp_test_submission
 ```
 
 to test the starting kit submission (`submissions/starting_kit`) and
 
 ```
-test_submission submission=random_forest_100
+ramp_test_submission --submission=random_forest_100
 ```
 
 to test `random_forest_100` any other submission in `submissions`.
