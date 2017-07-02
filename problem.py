@@ -6,7 +6,7 @@ from sklearn.model_selection import ShuffleSplit
 problem_title = 'Boston housing price regression'
 _target_column_name = 'medv'
 # A type (class) which will be used to create wrapper objects for y_pred
-Predictions = rw.prediction_types.regression.make_predictions_type()
+Predictions = rw.prediction_types.make_regression()
 # An object implementing the workflow
 workflow = rw.workflows.Regressor()
 
