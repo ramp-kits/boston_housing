@@ -4,9 +4,11 @@ import rampwf as rw
 from sklearn.model_selection import ShuffleSplit
 
 problem_title = 'Boston housing price regression'
-Predictions = rw.prediction_types.regression.make_prediction_type()
+# A type (class) which will be used to create wrapper objects for y_pred
+Predictions = rw.prediction_types.regression.make_predictions_type()
+# An object implementing the workflow
 workflow = rw.workflows.Regressor()
-prediction_labels = None
+
 _target_column_name = 'medv'
 
 score_types = [
