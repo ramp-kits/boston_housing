@@ -18,4 +18,4 @@ to test the starting kit submission (`submissions/starting_kit`) and
 ramp_test_submission --submission=random_forest_100
 ```
 
-to test `random_forest_100` any other submission in `submissions`.
+to test `random_forest_100` or any other submission in `submissions`.
